@@ -23,6 +23,8 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'redcarpet'
 gem "figaro"
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

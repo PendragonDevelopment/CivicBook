@@ -1,0 +1,19 @@
+<%= simple_form_for(@representative_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :office %>
+    <%= f.input :district %>
+    <%= f.input :term %>
+    <%= f.input :term_start %>
+    <%= f.input :bio %>
+    <%= f.input :profession %>
+    <%= f.input :party_affiliation %>
+    <%= f.input :official_email %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

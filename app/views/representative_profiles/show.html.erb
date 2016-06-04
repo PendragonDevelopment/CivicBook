@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @representative_profile.name %>
+</p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @representative_profile.office %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @representative_profile.district %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @representative_profile.term %>
+</p>
+
+<p>
+  <strong>Term start:</strong>
+  <%= @representative_profile.term_start %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @representative_profile.bio %>
+</p>
+
+<p>
+  <strong>Profession:</strong>
+  <%= @representative_profile.profession %>
+</p>
+
+<p>
+  <strong>Party affiliation:</strong>
+  <%= @representative_profile.party_affiliation %>
+</p>
+
+<p>
+  <strong>Official email:</strong>
+  <%= @representative_profile.official_email %>
+</p>
+
+<%= link_to 'Edit', edit_representative_profile_path(@representative_profile) %> |
+<%= link_to 'Back', representative_profiles_path %>

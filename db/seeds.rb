@@ -28,3 +28,43 @@ RepresentativeProfile.create(name: "Harry Sims",
  profession: "- Retired Clarke County School District fifth grade teacher at Barrow Elementary School",
  party_affiliation: "",
  official_email: "harry.sims@athensclarkecounty.com")
+RepresentativeProfile.create({
+  name: 'Melissa Link',
+  office: 'Commissioner',
+  district: '3'
+})
+RepresentativeProfile.create({
+  name: 'Allison Wright',
+  office: 'Commissioner',
+  district: '4'
+})
+RepresentativeProfile.create({
+  name: 'Jared Bailey',
+  office: 'Commissioner',
+  district: '5'
+})
+RepresentativeProfile.create({
+  name: 'Jerry NeSmith',
+  office: 'Commissioner',
+  district: '6'
+})
+RepresentativeProfile.create({
+  name: 'Diane Bell',
+  office: 'Commissioner',
+  district: '7'
+})
+RepresentativeProfile.create({
+  name: 'Andy Herod',
+  office: 'Commissioner',
+  district: '8'
+})
+RepresentativeProfile.create({
+  name: 'Kelly Girtz',
+  office: 'Commissioner',
+  district: '9'
+})
+RepresentativeProfile.create({
+  name: 'Mike Hamby',
+  office: 'Commissioner',
+  district: '10'
+})

@@ -14,25 +14,28 @@
       <th>Profession</th>
       <th>Party affiliation</th>
       <th>Official email</th>
-      <th colspan="3"></th>
+      <% if current_user && current_user.admin? %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @representative_profiles.each do |representative_profile| %>
       <tr>
-        <td><%= representative_profile.name %></td>
+        <td><%= link_to representative_profile.name, representative_profile %></td>
         <td><%= representative_profile.office %></td>
         <td><%= representative_profile.district %></td>
         <td><%= representative_profile.term_start.strftime('%m/%d/%Y') %></td>
         <td><%= representative_profile.term.strftime('%m/%d/%Y') %></td>
-        <td><%= representative_profile.bio %></td>
+        <td><%= markdown(representative_profile.bio.truncate(40)) %></td>
         <td><%= representative_profile.profession %></td>
         <td><%= representative_profile.party_affiliation %></td>
         <td><%= mail_to representative_profile.official_email %></td>
-        <td><%= link_to 'Show', representative_profile %></td>
-        <td><%= link_to 'Edit', edit_representative_profile_path(representative_profile) %></td>
-        <td><%= link_to 'Destroy', representative_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user && current_user.admin? %>
+          <td><%= link_to 'Edit', edit_representative_profile_path(representative_profile) %></td>
+          <td><%= link_to 'Destroy', representative_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

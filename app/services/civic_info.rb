@@ -10,7 +10,7 @@ class CivicInfo
 
   def initialize(address)
     @address = address
-    @api_key = "AIzaSyCBry-wWNlRyWlE-i9a4Oj8Kbxyvd7wW8o"
+    @api_key = ENV.fetch('GOOGLE_API_KEY')
     set_options
   end
 

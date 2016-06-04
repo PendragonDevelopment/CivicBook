@@ -5,16 +5,12 @@ class CivicInfoController < ApplicationController
     @address = params[:address]
     @ci = CivicInfo::Base.new(@address)
     @district = @ci.commission_district
-    @officials = @ci.officials
-    @info_hash = @ci.concise_info
 
-    redirect_to representatives_results_path(district: @district, info_hash: @info_hash, officials: @officials)
+    redirect_to representatives_results_path(district: @district)
   end
 
   def representatives_results
-    @district = params[:district]
-    @info_hash = params[:info_hash]
-    @officials = params[:officials]
+    @commissioner = RepresentativeProfile.find_by(district: params[:district])
   end
 
 end

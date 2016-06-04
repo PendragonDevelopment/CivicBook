@@ -14,6 +14,18 @@ class CivicInfo
     set_options
   end
 
+  def get_commission_district
+    council_key = get_civic_info["divisions"].keys.select { |k| k.to_s.include? "council_district" }
+    council_key.first.to_s.last.to_i
+  end
+
+  # Not necessary right now, but may be useful
+  def get_divisions
+    get_civic_info["division"].map { |d| d[1]["name"] }
+  end
+
+  private
+
   def set_options
     @options = {
       query: {
@@ -27,16 +39,6 @@ class CivicInfo
   def get_civic_info
     # get the info from Google
     self.class.get('/representatives', @options)
-  end
-
-  def get_commission_district
-    council_key = get_civic_info["divisions"].keys.select { |k| k.to_s.include? "council_district" }
-    council_key.first.to_s.last.to_i
-  end
-
-  # Not necessary right now, but may be useful
-  def get_divisions
-    get_civic_info["division"].map { |d| d[1]["name"] }
   end
 
 end

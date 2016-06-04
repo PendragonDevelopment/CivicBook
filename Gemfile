@@ -16,6 +16,7 @@ group :development do
 end
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'pg'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'unicorn'
@@ -25,7 +26,6 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'sqlite3'
 end
 group :development, :test do
   gem 'pry-rails'
@@ -33,5 +33,4 @@ group :development, :test do
 end
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
 end

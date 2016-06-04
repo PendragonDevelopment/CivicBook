@@ -1,32 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
  *
  *= require_tree .
  *= require_self
  */
 @charset "UTF-8";
-
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license
-
-Copyright (c) 2013 Daniel Eden
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
 
 .animated {
   -webkit-animation-duration: 1s;
@@ -3732,8 +3709,9 @@ img { max-width: 100%; }
 
 .navbar {
   padding-top: 10px;
-  background: #333;
-  background: rgba(51, 51, 51, 0.75);
+  a {
+    color: #fff;
+  }
   border: 0;
   -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
@@ -3758,7 +3736,7 @@ ul.navbar-nav {
 .navbar-inverse ul.navbar-nav li a.btn-link-2:hover,
 .navbar-inverse ul.navbar-nav li a.btn-link-2:focus,
 .navbar-inverse ul.navbar-nav li a.btn-link-2:active,
-.navbar-inverse ul.navbar-nav li a.btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+.navbar-inverse ul.navbar-nav li a.btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); a {color: #333;} }
 
 /***** Top content *****/
 
@@ -4191,4 +4169,26 @@ footer {
 
 .footer-copyright {
   margin-top: 25px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  color: #333;
+}
+
+.inner-bg .text {
+  padding: 0 0 2em;
+  border-radius: 5px;
+  background: rgba(255,255,255,.6);
+  h2, p{
+    color: #1a1617;
+  }
+  p {
+    font-weight:700;
+  }
+  h2 {
+    font-weight:100;
+    strong {
+      font-weight: 500;
+    }
+  }
 }

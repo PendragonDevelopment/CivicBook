@@ -3,16 +3,18 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text">
-
-          <h1 class="wow fadeInLeftBig">
-            <%= image_tag 'logo.png', size:'100x100', class:"text-center" %>
-            Find <strong>Your Representatives</strong> Today
-          </h1>
+          <div class="col-sm-12 how-it-works section-description wow fadeInLeftBig">
+            <h2>
+              <%= image_tag 'logo.png', size:'100x100', class:"text-center" %>
+              Find <strong>Your Representatives</strong> Today
+            </h2>
+            <div class="divider-1 wow fadeInUp"><span></span></div>
+          </div>
           <div class="description wow fadeInLeftBig">
             <p>Put in your address to see who the representatives for your area are!</p>
           </div>
           <div class="subscribe wow fadeInUp">
-            <form class="form-inline" role="form" action="/get-representatives" method="post">
+            <form class="form-inline" role="form" action="/get_representatives" method="post">
               <div class="form-group">
                 <label class="sr-only" for="address">Address</label>
                 <input type="text" name="address" placeholder="Enter your address..." class="address form-control" id="address">

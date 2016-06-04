@@ -8,8 +8,8 @@
       <th>Name</th>
       <th>Office</th>
       <th>District</th>
-      <th>Term</th>
       <th>Term start</th>
+      <th>Term end</th>
       <th>Bio</th>
       <th>Profession</th>
       <th>Party affiliation</th>
@@ -24,8 +24,8 @@
         <td><%= representative_profile.name %></td>
         <td><%= representative_profile.office %></td>
         <td><%= representative_profile.district %></td>
-        <td><%= representative_profile.term %></td>
-        <td><%= representative_profile.term_start %></td>
+        <td><%= representative_profile.term_start.strftime('%m/%d/%Y') %></td>
+        <td><%= representative_profile.term.strftime('%m/%d/%Y') %></td>
         <td><%= representative_profile.bio %></td>
         <td><%= representative_profile.profession %></td>
         <td><%= representative_profile.party_affiliation %></td>

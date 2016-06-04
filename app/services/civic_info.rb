@@ -11,26 +11,39 @@ class CivicInfo
   def initialize(address)
     @address = address
     @api_key = ENV.fetch('GOOGLE_API_KEY')
-    set_options
+    @options = set_options
   end
 
   def commission_district
+    # Get the County Commission district that the address
+    # belongs to.
     info_hash[:council_district].to_i
   end
 
   def info_hash
+    # Returns general information about the address
+    # 
+    # Sample Response
+    # ===============
+    # => 
+    # {
+    #  :country=>"us",
+    #  :state=>"ga",
+    #  :county=>"clarke",
+    #  :sldu=>"46",
+    #  :place=>"athens",
+    #  :council_district=>"4",
+    #  :sldl=>"117",
+    #  :cd=>"10"
+    # }
+    #
     extract_division_hash
-  end
-
-  # Not necessary right now, but may be useful later
-  def divisions_strings
-    get_civic_info["division"].map { |d| d[1]["name"] }
   end
 
   private
 
   def set_options
-    @options = {
+    {
       query: {
         address: @address,
         includeOffices: 'false',
@@ -83,14 +96,9 @@ class CivicInfo
     self.class.get('/representatives', @options)
   end
 
-  def make_division_array
-    test_array = get_civic_info["divisions"].keys.map do |k|
-      k.split('/')
-    end
-    test_array.flatten!.uniq!
-    test_array[1..test_array.length]
-  end
-
+  # The next two methods take the keys from the ["divisions"] object
+  # in the API response, split them into their component parts
+  # and convert them into a hash of useful information
   def extract_division_hash
     new_hash = {}
     make_division_array.each do |k|
@@ -98,5 +106,13 @@ class CivicInfo
       new_hash[array.first] = array.last
     end
     new_hash.symbolize_keys
+  end
+
+  def make_division_array
+    test_array = get_civic_info["divisions"].keys.map do |k|
+      k.split('/')
+    end
+    test_array.flatten!.uniq!
+    test_array[1..test_array.length]
   end
 end

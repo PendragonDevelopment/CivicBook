@@ -1,2 +1,29 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<div class="top-content">
+  <div class="inner-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+
+          <h1 class="wow fadeInLeftBig">
+            <%= image_tag 'logo.png', size:'100x100', class:"text-center" %>
+            Find <strong>Your Representatives</strong> Today
+          </h1>
+          <div class="description wow fadeInLeftBig">
+            <p>Put in your address to see who the representatives for your area are!</p>
+          </div>
+          <div class="subscribe wow fadeInUp">
+            <form class="form-inline" role="form" action="/get-representatives" method="post">
+              <div class="form-group">
+                <label class="sr-only" for="address">Address</label>
+                <input type="text" name="address" placeholder="Enter your address..." class="address form-control" id="address">
+              </div>
+              <button type="submit" class="btn">Find your Reps!</button>
+            </form>
+            <div class="success-message"></div>
+            <div class="error-message"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

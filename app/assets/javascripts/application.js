@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery-backstretch
+//= require wowjs
+//= require retinajs/src/retina.js
 //= require_tree .

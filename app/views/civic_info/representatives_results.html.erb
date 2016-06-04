@@ -5,6 +5,9 @@
         <div class="col-sm-8 col-sm-offset-2 text">
           <div class="col-sm-12">
             <h2><%= @info_hash %></h2>
+            <% @officials.each do |o| %>
+              <h2><%= o[0] %>: <%=o[1] %> </h2>
+            <% end %>
           </div>
         </div>
       </div>

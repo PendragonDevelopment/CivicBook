@@ -18,3 +18,13 @@ RepresentativeProfile.create(name: "Sharyn Dickerson",
  profession: "President, Sharyn Dickerson & Associates, LLC (2005-present)",
  party_affiliation: "",
  official_email: "sharyn.dickerson@athensclarkecounty.com")
+RepresentativeProfile.create(name: "Harry Sims",
+ office: "Commissioner",
+ district: "2",
+ term: "Mon, 31 Dec 2018 00:00:00 EST -05:00",
+ term_start: "Thu, 01 Jan 2015 00:00:00 EST -05:00",
+ bio:
+  "- Retired Clarke County School District fifth grade teacher at Barrow Elementary School (29 years)\r\n- Crawford Coal and Mattress Works (two years)",
+ profession: "- Retired Clarke County School District fifth grade teacher at Barrow Elementary School",
+ party_affiliation: "",
+ official_email: "harry.sims@athensclarkecounty.com")

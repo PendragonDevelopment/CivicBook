@@ -5,8 +5,12 @@
     <%= f.input :name %>
     <%= f.input :office %>
     <%= f.input :district %>
-    <%= f.input :term %>
-    <%= f.input :term_start %>
+    <%= f.input :term_start, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
+    <%= f.input :term, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12,
+                              order: [:day, :month, :year] %>
     <%= f.input :bio %>
     <%= f.input :profession %>
     <%= f.input :party_affiliation %>

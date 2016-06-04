@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  office: MyString
+  district: MyString
+  term: 2016-06-04 11:52:38
+  term_start: 2016-06-04 11:52:38
+  bio: MyText
+  profession: MyString
+  party_affiliation: MyString
+  official_email: MyString
+
+two:
+  name: MyString
+  office: MyString
+  district: MyString
+  term: 2016-06-04 11:52:38
+  term_start: 2016-06-04 11:52:38
+  bio: MyText
+  profession: MyString
+  party_affiliation: MyString
+  official_email: MyString

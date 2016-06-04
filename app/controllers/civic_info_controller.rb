@@ -11,7 +11,7 @@ class CivicInfoController < ApplicationController
 
   def representatives_results
     if params[:district] == 0
-      @commissioner.name = "We couldn't find your representative. Try an address within a block of where you are."
+      @msg = "We couldn't find your representative. Try an address within a block of where you are."
     else
       @commissioner = RepresentativeProfile.find_by(district: params[:district])
     end

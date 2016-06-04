@@ -14,13 +14,16 @@ class CivicInfo
     set_options
   end
 
-  def get_commission_district
-    council_key = get_civic_info["divisions"].keys.select { |k| k.to_s.include? "council_district" }
-    council_key.first.to_s.last.to_i
+  def commission_district
+    info_hash[:council_district].to_i
+  end
+
+  def info_hash
+    extract_division_hash
   end
 
   # Not necessary right now, but may be useful later
-  def get_divisions
+  def divisions_strings
     get_civic_info["division"].map { |d| d[1]["name"] }
   end
 
@@ -80,6 +83,20 @@ class CivicInfo
     self.class.get('/representatives', @options)
   end
 
+  def make_division_array
+    test_array = get_civic_info["divisions"].keys.map do |k|
+      k.split('/')
+    end
+    test_array.flatten!.uniq!
+    test_array[1..test_array.length]
+  end
 
-
+  def extract_division_hash
+    new_hash = {}
+    make_division_array.each do |k|
+      array = k.split(':')
+      new_hash[array.first] = array.last
+    end
+    new_hash.symbolize_keys
+  end
 end

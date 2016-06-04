@@ -27,6 +27,9 @@ gem 'redcarpet'
 gem "figaro"
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem 'rails-assets-jquery-backstretch', source: 'https://rails-assets.org'
+gem 'rails-assets-wowjs', source: 'https://rails-assets.org'
+gem 'rails-assets-retinajs', source: 'https://rails-assets.org'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

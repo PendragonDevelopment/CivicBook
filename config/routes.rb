@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   resources :feedbacks
   post 'get_representatives', to: 'civic_info#get_representatives'
   get 'representatives_results', to: 'civic_info#representatives_results'
+  get '/about', to: 'visitors#about'
   resources :representative_profiles
   root to: 'visitors#index'
   devise_for :users

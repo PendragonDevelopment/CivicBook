@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'httparty'
+gem 'faraday'
 #meaningless comment
 group :development, :test do
   gem 'byebug'

@@ -3,6 +3,8 @@ module CivicInfo
 
     API_KEY = ENV.fetch('GOOGLE_API_KEY')
 
+    attr_reader :civic_info
+
     def initialize(address)
       @address = address
       @civic_info = CivicInfo::GetCivicInfo.call(@address)

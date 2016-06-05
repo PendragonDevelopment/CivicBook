@@ -29,3 +29,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  var initAutocomplete = function() {
+    autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('address')),
+      {types: ['geocode']});
+  };
+
+  $(document).on('ready', initAutocomplete);
+</script>

@@ -7,7 +7,7 @@
             <% if @msg %>
               <h2><%= @msg %></h2>
             <% else %>
-              <h2><%= image_tag @commissioner.avatar.url(:square), class: 'img-thumbnail' %><%= @commissioner.name %></h2>
+              <h2><%= image_tag @commissioner.avatar.url(:square), class: 'img-thumbnail' %>&nbsp;<%= @commissioner.name %></h2>
               <h2>District <%= @commissioner.district_id %></h2>
             <% end %>
           </div>

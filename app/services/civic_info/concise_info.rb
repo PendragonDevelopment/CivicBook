@@ -6,6 +6,7 @@ module CivicInfo
     end
 
     def call
+      return { council_district: 0 } if @civic_info.code == 400
       # Returns general information about the address
       # 
       # Sample Response

@@ -14,9 +14,27 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
-      </div>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 footer-social">
+              <a href="#"><span class="typcn typcn-social-facebook"></span></a>
+              <a href="#"><span class="typcn typcn-social-dribbble"></span></a>
+              <a href="#"><span class="typcn typcn-social-twitter"></span></a>
+              <a href="#"><span class="typcn typcn-social-google-plus"></span></a>
+              <a href="#"><span class="typcn typcn-social-instagram"></span></a>
+              <a href="#"><span class="typcn typcn-social-pinterest"></span></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 footer-copyright">
+              &copy; 2016 - Civic Hack Athens
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

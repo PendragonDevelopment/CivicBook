@@ -28,7 +28,7 @@ class RepresentativeProfilesController < ApplicationController
   # GET /representative_profiles
   # GET /representative_profiles.json
   def index
-    @representative_profiles = RepresentativeProfile.all
+    @representative_profiles = RepresentativeProfile.all.order(:id)
   end
 
   # GET /representative_profiles/1

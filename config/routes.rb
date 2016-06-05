@@ -39,6 +39,7 @@
 
 Rails.application.routes.draw do
 
+  resources :feedbacks
   post 'get_representatives', to: 'civic_info#get_representatives'
   get 'representatives_results', to: 'civic_info#representatives_results'
   resources :representative_profiles

@@ -1,0 +1,13 @@
+<%= simple_form_for(@feedback) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :survey_type, as: :select, collection: Feedback.survey_types.map { |k,v| [k.humanize, k] } %>
+    <%= f.input :title, class: 'form-control' %>
+    <%= f.input :survey_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

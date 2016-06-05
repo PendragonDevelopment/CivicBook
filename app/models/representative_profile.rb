@@ -21,6 +21,7 @@
 #
 
 class RepresentativeProfile < ActiveRecord::Base
+  has_many :feedbacks, dependent: :destroy
 
   has_attached_file :avatar, styles: {
     thumb: '100x100>',

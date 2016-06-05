@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: feedbacks
+#
+#  id                        :integer          not null, primary key
+#  survey_type               :integer
+#  survey_url                :string
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  title                     :string
+#  representative_profile_id :integer
+#
+
 class FeedbacksController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
@@ -25,7 +38,8 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks
   # POST /feedbacks.json
   def create
-    @feedback = Feedback.new(feedback_params)
+    @representative_profile = RepresentativeProfile.find(params[:feedback][:representative_profile_id])
+    @feedback = @representative_profile.feedbacks.new(feedback_params)
 
     respond_to do |format|
       if @feedback.save
@@ -66,10 +80,11 @@ class FeedbacksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_feedback
       @feedback = Feedback.find(params[:id])
+      @representative_profile = @feedback.representative_profile
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
-      params.require(:feedback).permit(:title, :survey_type, :survey_url)
+      params.require(:feedback).permit(:title, :survey_type, :survey_url, :representative_profile_id)
     end
 end

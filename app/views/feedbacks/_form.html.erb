@@ -11,6 +11,10 @@
       <%= f.input_field :survey_type, as: :select, collection: Feedback.survey_types.map { |k,v| [k.humanize, k] }, class: 'form-control' %>
     </div>
     <div class="form-group">
+      <%= f.label :representative_profile_id, class: 'control-label' %>
+      <%= f.input_field :representative_profile_id, as: :select, collection: RepresentativeProfile.all.map { |rp| [rp.name.humanize, rp.id] }, class: 'form-control' %>
+    </div>
+    <div class="form-group">
       <%= f.label :survey_url, class: 'control-label' %>
       <%= f.input_field :survey_url, class: 'form-control' %>
     </div>

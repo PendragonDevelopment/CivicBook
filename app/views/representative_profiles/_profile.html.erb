@@ -3,8 +3,60 @@
     <%= image_tag representative_profile.avatar.url(:thumb) %>
   </div>
   <div class="rep-header">
-    <h3><%= link_to representative_profile.name, representative_profile %></h3>
+    <h3><%= representative_profile.name %></h3>
     <h4><%= representative_profile.office %> for District <%= representative_profile.district %></h4>
-    <h5><%= mail_to representative_profile.official_email %></h5>
+
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#rep-<%= representative_profile.id %>">View Profile</button>
+  </div>
+</div>
+
+<div class="modal fade" id="rep-<%= representative_profile.id %>" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Profile-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= representative_profile.office %> for District <%= representative_profile.district %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+
+              <div class="row">
+                <div class="col-sm-6 col-md-4">
+
+                  <%= image_tag representative_profile.avatar.url(:original) , class:"img-rounded img-responsive" %>
+                </div>
+                <div class="col-sm-6 col-md-8">
+                  <h4>
+                    <%= link_to representative_profile.name, representative_profile %></h4>
+                  <small><cite title="San Francisco, USA">Athens, GA <i class="glyphicon glyphicon-map-marker">
+                  </i></cite></small>
+                  <p>
+                    <i class="glyphicon glyphicon-envelope"></i><%= mail_to representative_profile.official_email %>
+                    <br />
+
+                    <br />
+                    Term : <%= representative_profile.term_start %></p>
+                  <!-- Split button -->
+
+                  <%= link_to 'More Info', representative_profile_path(representative_profile), class: "btn btn-default" %>
+
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

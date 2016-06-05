@@ -4192,3 +4192,15 @@ footer {
     }
   }
 }
+
+.navbar-right {
+  background: rgba(50,50,50,0.7);
+  margin-top: -10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.content {
+  margin-top: 3em;
+}

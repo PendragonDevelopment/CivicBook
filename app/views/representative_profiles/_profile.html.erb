@@ -1,0 +1,10 @@
+<div class="col-sm-6 text-center">
+  <div class="rep-avatar pull-left">
+    <%= image_tag representative_profile.avatar.url(:thumb) %>
+  </div>
+  <div class="rep-header">
+    <h3><%= link_to representative_profile.name, representative_profile %></h3>
+    <h4><%= representative_profile.office %> for District <%= representative_profile.district %></h4>
+    <h5><%= mail_to representative_profile.official_email %></h5>
+  </div>
+</div>

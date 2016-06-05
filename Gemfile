@@ -27,7 +27,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'redcarpet'
 gem "figaro"
-gem 'paperclip'
+gem 'paperclip', "~> 5.0.0.beta1"
 gem 'aws-sdk', '~> 2.3'
 gem 'rails-assets-jquery-backstretch', source: 'https://rails-assets.org'
 gem 'rails-assets-wowjs', source: 'https://rails-assets.org'

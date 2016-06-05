@@ -1,15 +1,3 @@
-# == Schema Information
-#
-# Table name: feedbacks
-#
-#  id          :integer          not null, primary key
-#  survey_type :integer
-#  survey_url  :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  title       :string
-#
-
 class FeedbacksController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]

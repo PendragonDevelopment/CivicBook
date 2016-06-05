@@ -70,6 +70,6 @@ class RepresentativeProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def representative_profile_params
-      params.require(:representative_profile).permit(:name, :office, :district, :term, :term_start, :bio, :profession, :party_affiliation, :official_email, :avatar)
+      params.require(:representative_profile).permit(:name, :office, :district, :term, :term_start, :bio, :profession, :party_affiliation, :official_email, :avatar, :district_id)
     end
 end

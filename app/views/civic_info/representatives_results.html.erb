@@ -3,12 +3,23 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 text">
-          <div class="col-sm-12">
+          <div class="col-sm-12 section-description wow fadeInLeftBig">
             <% if @msg %>
               <h2><%= @msg %></h2>
             <% else %>
               <h2><%= @commissioner.name %></h2>
             <% end %>
+          </div>
+          <div class="subscribe wow fadeInUp">
+            <form class="form-inline" role="form" action="/get_representatives" method="post">
+              <div class="form-group">
+                <label class="sr-only" for="address">Address</label>
+                <input type="text" name="address" placeholder="Enter your address..." class="address form-control" id="address">
+              </div>
+              <button type="submit" class="btn">Find your Reps!</button>
+            </form>
+            <div class="success-message"></div>
+            <div class="error-message"></div>
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Civic Book" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Civic Book" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV.fetch('GOOGLE_API_KEY') %>&libraries=places"></script>
   </head>
@@ -20,12 +20,9 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12 footer-social">
-              <a href="#"><span class="typcn typcn-social-facebook"></span></a>
-              <a href="#"><span class="typcn typcn-social-dribbble"></span></a>
-              <a href="#"><span class="typcn typcn-social-twitter"></span></a>
-              <a href="#"><span class="typcn typcn-social-google-plus"></span></a>
-              <a href="#"><span class="typcn typcn-social-instagram"></span></a>
-              <a href="#"><span class="typcn typcn-social-pinterest"></span></a>
+              <a href="#"><span class="typcn typcn-social-facebook">Representatives</span></a>
+              <a href="#"><span class="typcn typcn-social-dribbble">Surveys</span></a>
+              <a href="#"><span class="typcn typcn-social-twitter">About</span></a>
             </div>
           </div>
           <div class="row">

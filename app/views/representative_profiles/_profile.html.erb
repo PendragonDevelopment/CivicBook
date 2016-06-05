@@ -39,7 +39,7 @@
                     <br />
 
                     <br />
-                    Term : <%= representative_profile.term_start %></p>
+                    Start Time : <%= representative_profile.term_start.strftime('%b %d, %Y') %></p>
                   <!-- Split button -->
 
                   <%= link_to 'More Info', representative_profile_path(representative_profile), class: "btn btn-default" %>

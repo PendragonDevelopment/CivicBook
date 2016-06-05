@@ -7,7 +7,7 @@
             <% if @msg %>
               <h2><%= @msg %></h2>
             <% else %>
-              <h2><%= image_tag @commissioner.avatar.url(:square) %><%= @commissioner.name %></h2>
+              <h2><%= image_tag @commissioner.avatar.url(:square), class: 'img-thumbnail' %><%= @commissioner.name %></h2>
             <% end %>
           </div>
           <div class="subscribe wow fadeInUp">

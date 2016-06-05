@@ -1,0 +1,11 @@
+<div class="container content">
+  <p id="notice"><%= notice %></p>
+  <h2><%= @feedback.title %></h2>
+  <div class="row">
+    <iframe class="<%= @feedback.survey_type %>" src="<%= @feedback.survey_url %>" frameborder="0"></iframe>
+  </div>
+  <div class="row">
+    <%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+    <%= link_to 'Back', feedbacks_path %>
+  </div>
+</div>
